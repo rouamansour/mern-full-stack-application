@@ -27,7 +27,7 @@ process.exit();
 });
 app.use('/api/clients', clientRouter);
 app.get("/",(req,res)=>{
-res.send("Bibliothèque");
+res.send("Project");
 });
 app.listen(process.env.PORT, () => {
 console.log(`Server is listening on port ${process.env.PORT}`); });

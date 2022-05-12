@@ -7,7 +7,7 @@ import {auth} from "../middleware/auth.js";
  * @desc Get All livres
  * @access Public
  */
-router.get('/', auth, getMontres);
+router.get('/',auth,getMontres);
 /**
  * @route POST /api/livres
  * @desc Ajouter un livre
