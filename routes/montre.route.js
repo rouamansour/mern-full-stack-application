@@ -1,13 +1,13 @@
 import express from 'express';
 const router = express.Router();
-import { getMontres, getMontreByID, createMontre, updateMontre, deleteMontre } from
-    '../controllers/montre.controller.js';
+import { getMontres, getMontreByID, createMontre, updateMontre, deleteMontre } from '../controllers/montre.controller.js';
+import {auth} from "../middleware/auth.js";
 /**
  * @route GET /api/livres
  * @desc Get All livres
  * @access Public
  */
-router.get('/', getMontres);
+router.get('/', auth, getMontres);
 /**
  * @route POST /api/livres
  * @desc Ajouter un livre

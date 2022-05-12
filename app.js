@@ -5,6 +5,8 @@ import cors from 'cors';
 import clientRouter from "./routes/client.route.js"
 import categorieRouter from "./routes/categorie.route.js";
 import montreRouter from "./routes/montre.route.js"; 
+import userRouter from "./routes/user.route.js"
+
 const app = express();
 app.listen(4000,function() {
     console.log("Le serveur écoute sur le port 6000")
@@ -31,3 +33,4 @@ app.listen(process.env.PORT, () => {
 console.log(`Server is listening on port ${process.env.PORT}`); });
 app.use('/api/categories', categorieRouter);
 app.use('/api/montres', montreRouter); 
+app.use('/api/users', userRouter);
