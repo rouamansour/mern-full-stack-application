@@ -10,7 +10,6 @@ export const createUser = async (req, res) => {
         email: email,
         password: hash,
     });
-    //const newUser = new User(req.body)
     try {
         await newUser.save();
 
@@ -21,7 +20,8 @@ export const createUser = async (req, res) => {
 }
 const generateAccessToken = (user) => {
     return jwt.sign({ user }, process.env.ACCESS_TOKEN_SECRET, {
-        expiresIn: '30s'
+        expiresIn:
+            '30s'
     });
 }
 export const getuserBYEmail = async (req, res) => {

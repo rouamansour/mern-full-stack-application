@@ -4,3 +4,6 @@ export const DELETE_MONTRE = "DELETE_MONTRE";
 export const ADD_MONTRE = "ADD_MONTRE";
 export const GET_SINGLE_MONTRE = "GET_SINGLE_MONTRE";
 export const UPDATE_MONTRE = "UPDATE_MONTRE";
+
+export const GET_CATEGORIES = "GET_CATEGORIES";
+export const GET_CLIENTS = "GET_AUTEURS";
