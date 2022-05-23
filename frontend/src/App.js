@@ -7,6 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import AjoutMontre from './Components/Montres/AjoutMontre';
 function App() {
   return (
     <>
@@ -31,6 +32,7 @@ function App() {
         </Box>
         <Routes>
           <Route exact path="/" element={<ListMontres />}></Route>
+          <Route path="/addArticles" element={<AjoutMontre/>}></Route>  
         </Routes>
       </Router>
     </>
