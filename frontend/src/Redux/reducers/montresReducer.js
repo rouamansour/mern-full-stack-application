@@ -21,14 +21,12 @@ const montresReducers = (state = initialState, action) => {
         case DELETE_MONTRE:
             return {
                 ...state,
-                montres: state.montres.filter(montre => montre._id !==
-                    action.payload)
+                montres: state.montres.filter(montre => montre._id !== action.payload)
             };
         case UPDATE_MONTRE:
             return {
                 ...state,
-                montres: state.montres.map(montre => montre._id ===
-                    action.payload._id ? (montre = action.payload) : montre)
+                montres: state.montres.map(montre => montre._id === action.payload._id ? (montre = action.payload) : montre)
             };
         case GET_SINGLE_MONTRE:
             return {

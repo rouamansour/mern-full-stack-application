@@ -8,21 +8,24 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
+
 import { FilePond, registerPlugin } from 'react-filepond'
 import 'filepond/dist/filepond.min.css';
-import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exiforientation'
+import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
+
+
 const AjoutMontre = () => {
-    const [isbn, setId] = useState("");
-    const [titre, setMarque] = useState("");
-    const [annedition, setCouleur] = useState("");
+    const [id, setId] = useState("");
+    const [marque, setMarque] = useState("");
+    const [couleur, setCouleur] = useState("");
     const [prix, setPrix] = useState("");
-    const [qtestock, setQtestock] = useState("");
-    const [specialite, setCategorie] = useState("");
+    const [qtestock, setQtestk] = useState("");
+    const [categorie, setCategorie] = useState("");
 //    const [maised, setMaised] = useState("");
-//    const [lesauteurs, setLesauteurs] = useState([]);
+    const [lesclients, setLesclients] = useState([]);
     const [files, setFiles] = useState("")
 
     const dispatch = useDispatch();
@@ -32,19 +35,19 @@ const AjoutMontre = () => {
         dispatch(loadClients());
     }, [dispatch]);
     const categories = useSelector((state) => state.allcategories.categories);
-    const auteurs = useSelector((state) => state.allclients.clients);
+    const clients = useSelector((state) => state.allclients.clients);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const liv = {
+        const mont = {
             id: id,
             marque: marque,
             couleur: couleur,
             prix: prix,
             qtestock: qtestock,
             //couverture: files[0].file.name,
-            categorie: categorie
-            //auteurs: lesauteurs
+            categorie: categorie,
+            clients: lesclients
         };
         dispatch(addmontre(mont));
         navigate("/");
@@ -63,19 +66,19 @@ const AjoutMontre = () => {
                         variant="outlined"
                         label="Id"
                         value={id}
-                        onChange={e => setIsbn(e.target.value)}
+                        onChange={e => setId(e.target.value)}
                         required />
                     <TextField
                         variant="outlined"
                         label="Marque"
                         value={marque}
-                        onChange={e => setTitre(e.target.value)}
+                        onChange={e => setMarque(e.target.value)}
                         required />
                     <TextField
                         variant="outlined"
                         label="Couleur"
                         value={couleur}
-                        onChange={e => setAnnedition(e.target.value)}
+                        onChange={e => setCouleur(e.target.value)}
                     />
                     <TextField
                         variant="outlined"
@@ -84,13 +87,13 @@ const AjoutMontre = () => {
                         value={prix}
                         onChange={e => setPrix(e.target.value)}
                     />
-                    {/* <TextField
+                    <TextField
                         variant="outlined"
                         type="Number"
                         label="Quantité"
                         value={qtestock}
-                        onChange={e => setQtestock(e.target.value)}
-                    /> */}
+                        onChange={e => setQtestk(e.target.value)}
+                    />
                     <TextField
                         variant="outlined"
                         select
@@ -101,9 +104,9 @@ const AjoutMontre = () => {
                     >
                         {
                             categories ?
-                            categories.map((spec) =>
-                                    <MenuItem key={spec._id}
-                                        value={spec._id}>{spec.nomcategories}</MenuItem>
+                            categories.map((cat) =>
+                                    <MenuItem key={cat._id}
+                                        value={cat._id}>{cat.nomcategories}</MenuItem>
                                 )
                                 : null
                         }
@@ -119,9 +122,9 @@ const AjoutMontre = () => {
                     >
                         {
                             clients ?
-                                clients.map((aut) =>
-                                    <MenuItem key={aut._id}
-                                        value={aut._id}>{aut.nomclient}</MenuItem>
+                                clients.map((clt) =>
+                                    <MenuItem key={clt._id}
+                                        value={clt._id}>{clt.nomclient}</MenuItem>
                                 )
                                 : null
                         }
@@ -129,7 +132,7 @@ const AjoutMontre = () => {
                 </FormControl>
             </form>
 
-            <h4>Télécharger Image</h4>
+            <h4>Download Picture</h4>
             <FormControl>
                 <div style={{ width: 300, height: 50 }}>
                     <FilePond

@@ -1,8 +1,9 @@
 import { GET_CATEGORIES } from "../types";
-import { CategorieService } from "../../services/Categorie-Service";
+import { CategoriesService } from "../../services/Categorie-Service"
+
 export const loadCategories = () => {
     return (dispatch) => {
-        CategorieService.fetchCategories()
+        CategoriesService.fetchCategories()
             .then(res => {
                 dispatch({
                     type: GET_CATEGORIES,
@@ -13,3 +14,5 @@ export const loadCategories = () => {
 
     }
 }
+
+

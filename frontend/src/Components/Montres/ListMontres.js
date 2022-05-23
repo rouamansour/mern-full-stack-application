@@ -13,7 +13,7 @@ const ListMontres = () => {
 
     return (
 
-        <div><AfficheMontres /></div>
+        <div><AfficheMontres/></div>
     )
 }
-export default ListMontres 
+export default ListMontres ;

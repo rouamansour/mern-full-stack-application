@@ -27,7 +27,7 @@ const AfficheMontres = () => {
             <Button variant="contained" color="success" size="medium">
                 <Link to={"/addArticles/"}
                     style={{ "textDecoration": "none", "color": "white" }}>
-                    Ajout
+                    Add
                 </Link>
             </Button>
             <Grid container spacing={2} columns={15} marginTop={10}>
@@ -38,25 +38,25 @@ const AfficheMontres = () => {
                                 component="img"
                                 height={230}
                                 image={"images/" + row.couverture}
-                                alt={row.titre}
+                                alt={row.marque}
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
-                                    {row.titre}
+                                    {row.marque}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
                                     {row.prix} TND
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    {row.maised.maisonedit}
+                                    {row.couleur}
                                 </Typography>
                             </CardContent>
                             <CardActions>
                                 <Link to={"/editMontres/" + row._id}
                                     style={{ "textDecoration": "none", "color": "white" }}> <Button variant="contained"
-                                        color="primary" size="small">Modifier</Button></Link>
+                                        color="primary" size="small">Update</Button></Link>
                                 <Button variant="contained" color="error" size="small"
-                                    onClick={() => handleDelete(row._id)}>Supprimer</Button>
+                                    onClick={() => handleDelete(row._id)}>Delete</Button>
                             </CardActions>
                         </Card>
                     </Grid>
@@ -68,4 +68,4 @@ const AfficheMontres = () => {
         </>
     )
 }
-export default AfficheMontres
+export default AfficheMontres;
