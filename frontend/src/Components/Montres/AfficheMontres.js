@@ -16,7 +16,7 @@ const AfficheMontres = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleDelete = (id) => {
-        if (window.confirm("sipprimer la catégorie O/N")) {
+        if (window.confirm("delete category O/N")) {
             dispatch(deletemontre(id));
             navigate("/");
         }
