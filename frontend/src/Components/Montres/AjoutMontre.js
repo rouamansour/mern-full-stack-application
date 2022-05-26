@@ -25,7 +25,7 @@ const AjoutMontre = () => {
     const [qtestock, setQtestk] = useState("");
     const [categorie, setCategorie] = useState("");
 //    const [maised, setMaised] = useState("");
-    const [lesclients, setLesclients] = useState([]);
+    //const [lesclients, setLesclients] = useState([]);
     const [files, setFiles] = useState("")
 
     const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const AjoutMontre = () => {
         dispatch(loadClients());
     }, [dispatch]);
     const categories = useSelector((state) => state.allcategories.categories);
-    const clients = useSelector((state) => state.allclients.clients);
+    //const clients = useSelector((state) => state.allclients.clients);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -47,7 +47,7 @@ const AjoutMontre = () => {
             qtestock: qtestock,
             //couverture: files[0].file.name,
             categorie: categorie,
-            clients: lesclients
+            //clients: lesclients
         };
         dispatch(addmontre(mont));
         navigate("/");
@@ -56,11 +56,8 @@ const AjoutMontre = () => {
 
         <div className="container">
 
-            <form style={{ marginLeft: 8 }}>
-                <div>
-                    <Button variant="contained"
-                        onClick={(event) => handleSubmit(event)}>Ajout</Button>
-                </div>
+            <form style={{ margin: 60 }}>
+                
                 <FormControl>
                     <TextField
                         variant="outlined"
@@ -106,12 +103,13 @@ const AjoutMontre = () => {
                             categories ?
                             categories.map((cat) =>
                                     <MenuItem key={cat._id}
-                                        value={cat._id}>{cat.nomcategories}</MenuItem>
+                                        value={cat._id}>{cat.nomcategories}
+                                    </MenuItem>
                                 )
                                 : null
                         }
                     </TextField>
-                    <TextField
+                    {/* <TextField
                         variant="outlined"
                         select
                         label="Clients"
@@ -128,12 +126,12 @@ const AjoutMontre = () => {
                                 )
                                 : null
                         }
-                    </TextField>
+                    </TextField> */}
                 </FormControl>
             </form>
 
-            <h4>Download Picture</h4>
-            <FormControl>
+            <h4 style={{ margin: 60 }}>Download Picture</h4>
+            <FormControl style={{ margin: 40}}>
                 <div style={{ width: 300, height: 50 }}>
                     <FilePond
                         files={files}
@@ -143,6 +141,11 @@ const AjoutMontre = () => {
                     />
                 </div>
             </FormControl>
+            <br></br>
+            <div>
+                    <Button style={{ margin: 60 }} variant="contained"
+                        onClick={(event) => handleSubmit(event)}>Add</Button>
+            </div>
         </div>
     );
 }

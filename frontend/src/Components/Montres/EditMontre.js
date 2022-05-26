@@ -22,10 +22,11 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 const EditMontre = () => {
     const [state, setState] = useState({
         id: "", marque: "", couleur: "",
-        prix: "", qtestock: "", categorie: "", clients: []
+        prix: "", qtestock: "", categorie: ""
+        //, clients: []
     });
 
-    const [clt, setClt] = useState([])
+    //const [clt, setClt] = useState([])
     const [files, setFiles] = useState("")
 
     const dispatch = useDispatch();
@@ -35,13 +36,13 @@ const EditMontre = () => {
     useEffect(() => {
         dispatch(loadSinglemontre(_id));
         dispatch(loadCategories());
-        dispatch(loadClients());
+        //dispatch(loadClients());
         setFiles("");
     }, [_id, dispatch]);
 
     const montre = useSelector((state) => state.allmontres.montre);
     const categories = useSelector((state) => state.allcategories.categories);
-    const listeclients = useSelector((state) => state.allclients.clients);
+    //const listeclients = useSelector((state) => state.allclients.clients);
 
     useEffect(() => {
         setState(montre);
@@ -49,7 +50,7 @@ const EditMontre = () => {
     }, [montre]);
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(clt)
+        //console.log(clt)
         const mont = {
             _id: _id,
             marque: state.marque,
@@ -58,7 +59,7 @@ const EditMontre = () => {
             qtestock: state.qtestock,
             couverture: files[0].file.name,
             categorie: state.categorie,
-            clients: clt.length > 0 ? clt : state.clients
+           // clients: clt.length > 0 ? clt : state.clients
         };
         dispatch(updatemontre(mont));
         navigate("/");
@@ -74,23 +75,23 @@ const EditMontre = () => {
         }
         else return null
     }
-    const labelclient = () => {
-        if (state.clients) {
-            let ch = ""
-            state.clients.map((clt) => {
-                if (clt.nomclient)
-                    ch = ch + clt.nomclient
-            })
-            return ch
-        }
-        else return null
-    }
-    const handleClients = (event) => {
-        setState({ ...state, "clients": [] });
+    // const labelclient = () => {
+    //     if (state.clients) {
+    //         let ch = ""
+    //         state.clients.map((clt) => {
+    //             if (clt.nomclient)
+    //                 ch = ch + clt.nomclient
+    //         })
+    //         return ch
+    //     }
+    //     else return null
+    // }
+    // const handleClients = (event) => {
+    //     setState({ ...state, "clients": [] });
 
-        setClt(event.target.value);
+    //     setClt(event.target.value);
 
-    }
+    // }
     return (
 
         <div className="container">
@@ -148,7 +149,7 @@ const EditMontre = () => {
                                 : null
                         }
                     </TextField>
-                    <TextField
+                    {/* <TextField
                         name="clients"
                         variant="outlined"
                         select
@@ -166,7 +167,7 @@ const EditMontre = () => {
                                 )
                                 : null
                         }
-                    </TextField>
+                    </TextField> */}
                 </FormControl>
             </form>
 

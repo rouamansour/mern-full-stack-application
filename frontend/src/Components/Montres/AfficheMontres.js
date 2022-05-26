@@ -24,8 +24,8 @@ const AfficheMontres = () => {
     const montres = useSelector((state) => state.allmontres.montres);
     return (
         <>
-            <Button variant="contained" color="success" size="medium">
-                <Link to={"/addArticles/"}
+            <Button variant="contained" color="success" size="medium" style={{ margin: 40 }}>
+                <Link to={"/addMontres/"}
                     style={{ "textDecoration": "none", "color": "white" }}>
                     Add
                 </Link>
