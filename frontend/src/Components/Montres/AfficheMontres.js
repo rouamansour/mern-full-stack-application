@@ -17,12 +17,14 @@ const AfficheMontres = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
     const handleDelete = (id) => {
         if (window.confirm("delete category Y/N ?")) {
             dispatch(deletemontre(id));
             navigate("/");
         }
     }
+    
     const montres = useSelector((state) => state.allmontres.montres);
     return (
         <>

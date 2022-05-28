@@ -11,7 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import AjoutMontre from './Components/Montres/AjoutMontre';
 import EditMontre from './Components/Montres/EditMontre';
 
-//import Login from './Authentification/Login';
+import Login from './Authentification/Login';
 function App() {
   return (
     <>
@@ -43,12 +43,12 @@ function App() {
           </AppBar>
         </Box>
         <Routes>
-          <Route exact path="/" element={<ListMontres />}></Route>
-          {/* <Route exact path="/montres" element={<ListMontres/>}></Route> */}
+          {/* <Route exact path="/" element={<ListMontres />}></Route> */}
+          <Route exact path="/montres" element={<ListMontres/>}></Route>
 
           <Route path="/addMontres" element={<AjoutMontre />}></Route>
           <Route path="/editMontres/:_id" element={<EditMontre />}></Route>
-          {/* <Route path="/" element={<Login/>}></Route> */}
+          <Route path="/" element={<Login/>}></Route>
         </Routes>
       </Router>
     </>

@@ -24,8 +24,9 @@ console.log('Impossible de se connecter à la base de données', err);
 process.exit();
 });
 app.use('/api/clients', clientRouter);
+
 app.get("/",(req,res)=>{
-res.send("Project");
+    res.send("Montre");
 });
 app.listen(process.env.PORT, () => {
 console.log(`Server is listening on port ${process.env.PORT}`); });
