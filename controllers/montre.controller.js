@@ -21,9 +21,9 @@ export const getMontreByID = async (req, res) => {
 }
 export const createMontre = async (req, res) => {
     const {
-        marque, couleur, prix, qtestock, categorie, clients } = req.body;
+        marque, couleur, prix, qtestock,image, categorie, clients } = req.body;
     const newMontre = new Montre({
-        marque: marque, couleur: couleur, prix: prix, qtestock: qtestock,  categorie: categorie, clients: clients
+        marque: marque, couleur: couleur, prix: prix, qtestock: qtestock, image: image, categorie: categorie, clients: clients
     })
     try {
         await newMontre.save();
@@ -35,11 +35,11 @@ export const createMontre = async (req, res) => {
 export const updateMontre = async (req, res) => {
     const { id } = req.params;
     const {
-        marque, couleur, prix, qtestock, categorie, clients } =
+        marque, couleur, prix, qtestock, image,categorie, clients } =
         req.body;
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`pas de montre avec un id: ${id}`);
     const Mont1 = {
-        marque: marque, couleur: couleur, prix: prix, qtestock: qtestock,  categorie: categorie, clients: clients, _id: id
+        marque: marque, couleur: couleur, prix: prix, qtestock: qtestock,  image: image,categorie: categorie, clients: clients, _id: id
     };
     await Montre.findByIdAndUpdate(id, Mont1);
     res.json(Mont1);

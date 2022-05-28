@@ -4,7 +4,7 @@ var montreSchema = mongoose.Schema({
     couleur:String,
     prix: Number,
     qtestock: Number,
-    //img:
+    image: String,
     categorie: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Categories'
