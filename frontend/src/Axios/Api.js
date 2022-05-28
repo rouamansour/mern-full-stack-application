@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL = 'http://localhost:6000/api';
+axios.defaults.baseURL = 'http://localhost:5050/api';
 let refreshToken = localStorage.getItem("refreshToken");
 let user = JSON.parse(localStorage.getItem("user"));
 //Request
@@ -24,7 +24,7 @@ axios.interceptors.response.use((response) => {
     if (error.response.status === 401 && !originalRequest._retry) {
         originalRequest._retry = true;
         if (refreshToken) {
-            axios.post('http://localhost:6000/api/users/refreshToken/', user).then((response) => {
+            axios.post('http://localhost:5050/api/users/refreshToken/', user).then((response) => {
                 console.log(response.data.accessToken)
                 axios.defaults.headers.common['Authorization'] = 'Bearer ' +
                     response.data.accessToken;

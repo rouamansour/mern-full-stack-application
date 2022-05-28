@@ -8,9 +8,7 @@ import montreRouter from "./routes/montre.route.js";
 import userRouter from "./routes/user.route.js"
 
 const app = express();
-app.listen(4000,function() {
-    console.log("Le serveur écoute sur le port 6000")
-})
+
 
 dotenv.config();
 app.use(express.json());

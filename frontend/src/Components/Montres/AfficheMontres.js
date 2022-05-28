@@ -6,6 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+//import AddIcon from '@material-ui/icons/Add';
+//import DeleteIcon from '@material-ui/icons/Delete';
 
 import { useDispatch, useSelector } from "react-redux";
 import { deletemontre } from "../../Redux/actions/montresAction"
@@ -24,7 +26,7 @@ const AfficheMontres = () => {
     const montres = useSelector((state) => state.allmontres.montres);
     return (
         <>
-            <Button variant="contained" color="success" size="medium" style={{ margin: 40 }}>
+            <Button variant="contained"  color="secondary" size="medium"  style={{ margin: 40 }}>
                 <Link to={"/addMontres/"}
                     style={{ "textDecoration": "none", "color": "white" }}>
                     Add
@@ -55,7 +57,7 @@ const AfficheMontres = () => {
                                 <Link to={"/editMontres/" + row._id}
                                     style={{ "textDecoration": "none", "color": "white" }}> <Button variant="contained"
                                         color="primary" size="small">Update</Button></Link>
-                                <Button variant="contained" color="error" size="small"
+                                <Button variant="outlined" color="error"   size="small" 
                                     onClick={() => handleDelete(row._id)}>Delete</Button>
                             </CardActions>
                         </Card>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { loadSinglemontre, updatemontre } from "../../Redux/actions/montresAction";
 import { loadCategories } from "../../Redux/actions/categoriesAction";
-import { loadClients } from "../../Redux/actions/clientsAction";
+//import { loadClients } from "../../Redux/actions/clientsAction";
 import { useDispatch, useSelector } from "react-redux";
 
 import Button from '@mui/material/Button';

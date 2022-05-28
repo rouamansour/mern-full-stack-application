@@ -35,6 +35,7 @@ const AjoutMontre = () => {
         dispatch(loadClients());
     }, [dispatch]);
     const categories = useSelector((state) => state.allcategories.categories);
+    console.log(categories);
     //const clients = useSelector((state) => state.allclients.clients);
 
     const handleSubmit = async (event) => {
@@ -91,6 +92,13 @@ const AjoutMontre = () => {
                         value={qtestock}
                         onChange={e => setQtestk(e.target.value)}
                     />
+                    {/* <TextField
+                        variant="outlined"
+                        type="text"
+                        label="Categories"
+                        value={categorie}
+                        onChange={e => setCategorie(e.target.value)}
+                    /> */}
                     <TextField
                         variant="outlined"
                         select
@@ -103,7 +111,7 @@ const AjoutMontre = () => {
                             categories ?
                             categories.map((cat) =>
                                     <MenuItem key={cat._id}
-                                        value={cat._id}>{cat.nomcategories}
+                                        value={cat._id}>{cat.nomcategorie}
                                     </MenuItem>
                                 )
                                 : null
