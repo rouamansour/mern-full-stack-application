@@ -18,7 +18,7 @@ const AfficheMontres = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleDelete = (id) => {
-        if (window.confirm("delete category O/N")) {
+        if (window.confirm("delete category Y/N ?")) {
             dispatch(deletemontre(id));
             navigate("/");
         }
@@ -39,7 +39,7 @@ const AfficheMontres = () => {
                             <CardMedia
                                 component="img"
                                 height={230}
-                                image={"images/" + row.couverture}
+                                image={"images/" + row.image}
                                 alt={row.marque}
                             />
                             <CardContent>

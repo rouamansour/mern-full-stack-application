@@ -5,7 +5,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-//import Button from '@mui/material/Button';
+import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 
 import AjoutMontre from './Components/Montres/AjoutMontre';
@@ -30,14 +30,15 @@ function App() {
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 Montre
               </Typography>
-              {/* <Link to="/"><Button color="error">Liste des montres</Button></Link> */}
-              <Link
+
+              <Link to="/"><Button color="error">Liste des montres</Button></Link>
+              {/* <Link
                 component="button"
                 variant="body2"
                 to="/"
               >
                 Liste des Montres
-              </Link>
+              </Link> */}
             </Toolbar>
           </AppBar>
         </Box>

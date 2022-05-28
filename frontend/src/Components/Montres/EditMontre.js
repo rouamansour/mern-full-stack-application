@@ -46,7 +46,7 @@ const EditMontre = () => {
 
     useEffect(() => {
         setState(montre);
-        setFiles(montre.couverture)
+        setFiles(montre.image)
     }, [montre]);
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -57,7 +57,7 @@ const EditMontre = () => {
             couleur: state.couleur,
             prix: state.prix,
             qtestock: state.qtestock,
-            couverture: files[0].file.name,
+            image: files[0].file.name,
             categorie: state.categorie,
            // clients: clt.length > 0 ? clt : state.clients
         };
@@ -97,10 +97,7 @@ const EditMontre = () => {
         <div className="container">
 
             <form style={{ marginLeft: 8 }}>
-                <div>
-                    <Button color="secondary" variant="contained"
-                        onClick={(event) => handleSubmit(event)}>Update</Button>
-                </div>
+                
                 <FormControl>
                     <TextField name="matque"
                         variant="outlined"
@@ -182,6 +179,10 @@ const EditMontre = () => {
                     />
                 </div>
             </FormControl>
+            <div>
+                    <Button color="secondary" variant="contained"
+                        onClick={(event) => handleSubmit(event)}>Update</Button>
+                </div>
         </div>
     );
 }

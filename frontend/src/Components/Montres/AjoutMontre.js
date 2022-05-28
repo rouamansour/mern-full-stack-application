@@ -46,7 +46,7 @@ const AjoutMontre = () => {
             couleur: couleur,
             prix: prix,
             qtestock: qtestock,
-            //couverture: files[0].file.name,
+            image: files[0].file.name,
             categorie: categorie,
             //clients: lesclients
         };
@@ -152,7 +152,8 @@ const AjoutMontre = () => {
             <br></br>
             <div>
                     <Button style={{ margin: 60 }} variant="contained"
-                        onClick={(event) => handleSubmit(event)}>Add</Button>
+                        onClick={(event) => handleSubmit(event)}>Add
+                    </Button>
             </div>
         </div>
     );
