@@ -1,6 +1,6 @@
 import express from 'express';
 import { createAcheteur, getacheteurBYEmail, RefreshToken, getacheteurBYEmailAcheteur }
-    from '../controllers/acheteur.controller';
+    from '../controllers/acheteur.controller.js';
 const router = express.Router();
 router.post('/', createAcheteur);
 router.post('/login', getacheteurBYEmail);
