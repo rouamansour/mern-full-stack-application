@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { loadMontres } from "../../Redux/actions/montresAction.js";
-import AfficheMontres from "./AfficheMontres.js"  ;
+import AfficheMontres from "./AfficheMontres"  ;
 const ListMontres = () => {
 
     const dispatch = useDispatch();

@@ -67,7 +67,6 @@ const AfficheMontres = () => {
                 )
                 )
                 }
-
             </Grid>
         </>
     )
