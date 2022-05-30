@@ -7,6 +7,9 @@ import categorieRouter from "./routes/categorie.route.js";
 import montreRouter from "./routes/montre.route.js"; 
 import userRouter from "./routes/user.route.js"
 
+import acheteurRouter from "./routes/acheteur.route.js";
+import commandeRouter from "./routes/commande.route.js";
+import lignecommandeRouter from "./routes/lignecommande.route.js";
 const app = express();
 
 
@@ -25,11 +28,16 @@ process.exit();
 });
 app.use('/api/clients', clientRouter);
 
+app.use('/api/categories', categorieRouter);
+app.use('/api/montres', montreRouter); 
+app.use('/api/users', userRouter);
+
+app.use('/api/users', acheteurRouter);
+app.use('/api/commandes', commandeRouter);
+app.use('/api/commandes', lignecommandeRouter);
+
 app.get("/",(req,res)=>{
     res.send("Montre");
 });
 app.listen(process.env.PORT, () => {
 console.log(`Server is listening on port ${process.env.PORT}`); });
-app.use('/api/categories', categorieRouter);
-app.use('/api/montres', montreRouter); 
-app.use('/api/users', userRouter);
