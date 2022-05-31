@@ -7,7 +7,7 @@ var montreSchema = mongoose.Schema({
     image: String,
     categorie: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Categories'
+        ref: 'Categorie'
     },
     clients: [{
         type: mongoose.Schema.Types.ObjectId,

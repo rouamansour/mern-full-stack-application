@@ -12,6 +12,8 @@ import AjoutMontre from './Components/Montres/AjoutMontre';
 import EditMontre from './Components/Montres/EditMontre';
 
 import Login from './Authentification/Login';
+
+//import ListCards from './Components/Acheteur/ListCards';
 function App() {
   return (
     <>
@@ -49,6 +51,9 @@ function App() {
           <Route path="/addMontres" element={<AjoutMontre />}></Route>
           <Route path="/editMontres/:_id" element={<EditMontre />}></Route>
           <Route path="/" element={<Login/>}></Route>
+          {/* <Route path="/" element={<ListCards/>}></Route>
+          <Route path="/admin" element={<Login/>}></Route> */}
+
         </Routes>
       </Router>
     </>
