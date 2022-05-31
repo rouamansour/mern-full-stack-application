@@ -1,4 +1,4 @@
-import { GET_MONTRES, DELETE_MONTRE, ADD_MONTRE, GET_SINGLE_MONTRE, UPDATE_MONTRE } from "../types";
+import { GET_MONTRES, DELETE_MONTRE, ADD_MONTRE, GET_SINGLE_MONTRE,UPDATE_MONTRE} from "../types";
 import { MontreService } from "../../services/Montre-Service";
 export const loadMontres = () => {
     return (dispatch) => {

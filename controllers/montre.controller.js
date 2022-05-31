@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 import Montre from '../models/Montre.model.js';
 export const getMontres = async (req, res) => {
     try {
-        const cat = await Montre.find().populate('clients')
-            .populate('categorie');
+        const cat = await Montre.find().populate('categorie');
         ;
         res.status(200).json(cat);
     } catch (error) {
@@ -12,8 +11,7 @@ export const getMontres = async (req, res) => {
 }
 export const getMontreByID = async (req, res) => {
     try {
-        const mont = await Montre.findById(req.params.id).populate('clients')
-            .populate('categories');
+        const mont = await Montre.findById(req.params.id).populate('categorie');
         res.status(200).json(mont);
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -21,9 +19,9 @@ export const getMontreByID = async (req, res) => {
 }
 export const createMontre = async (req, res) => {
     const {
-        marque, couleur, prix, qtestock,image, categorie, clients } = req.body;
+        marque, couleur, prix, qtestock,image, categorie } = req.body;
     const newMontre = new Montre({
-        marque: marque, couleur: couleur, prix: prix, qtestock: qtestock, image: image, categorie: categorie, clients: clients
+        marque: marque, couleur: couleur, prix: prix, qtestock: qtestock, image: image, categorie: categorie
     })
     try {
         await newMontre.save();
@@ -35,11 +33,11 @@ export const createMontre = async (req, res) => {
 export const updateMontre = async (req, res) => {
     const { id } = req.params;
     const {
-        marque, couleur, prix, qtestock, image,categorie, clients } =
+        marque, couleur, prix, qtestock, image,categorie} =
         req.body;
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`pas de montre avec un id: ${id}`);
     const Mont1 = {
-        marque: marque, couleur: couleur, prix: prix, qtestock: qtestock,  image: image,categorie: categorie, clients: clients, _id: id
+        marque: marque, couleur: couleur, prix: prix, qtestock: qtestock,  image: image,categorie: categorie,_id: id
     };
     await Montre.findByIdAndUpdate(id, Mont1);
     res.json(Mont1);

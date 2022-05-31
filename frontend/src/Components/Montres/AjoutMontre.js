@@ -51,7 +51,7 @@ const AjoutMontre = () => {
             //clients: lesclients
         };
         dispatch(addmontre(mont));
-        navigate("/");
+        navigate("/montres");
     }
     return (
 

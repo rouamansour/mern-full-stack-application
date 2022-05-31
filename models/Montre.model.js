@@ -8,11 +8,12 @@ var montreSchema = mongoose.Schema({
     categorie: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Categorie'
-    },
-    clients: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Client'
-    }]
+    }
+    // ,
+    // clients: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Client'
+    // }]
 })
 const Montre = mongoose.model('Montre', montreSchema);
 export default Montre 

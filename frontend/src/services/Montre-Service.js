@@ -4,10 +4,10 @@ const fetchMontres = async () => {
     return await Axios.get(MONTRE_API);
 }
 const fetchMontreById = async (montreID) => {
-    return await Axios.get(MONTRE_API + '/' + montreID);
+    return await Axios.get(MONTRE_API + '/' +montreID);
 }
 const deleteMontre = async (montreID) => {
-    return await Axios.delete(MONTRE_API + '/' + montreID);
+    return await Axios.delete(MONTRE_API + '/' +montreID);
 }
 const addMontre = async (montre) => {
     return await Axios.post(MONTRE_API, montre);

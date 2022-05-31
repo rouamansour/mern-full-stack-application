@@ -21,7 +21,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
 const EditMontre = () => {
     const [state, setState] = useState({
-        id: "", marque: "", couleur: "",
+        marque: "", couleur: "",
         prix: "", qtestock: "", categorie: ""
         //, clients: []
     });
@@ -33,6 +33,7 @@ const EditMontre = () => {
     const navigate = useNavigate();
     const params = useParams();
     const _id = params._id;
+
     useEffect(() => {
         dispatch(loadSinglemontre(_id));
         dispatch(loadCategories());
@@ -58,11 +59,11 @@ const EditMontre = () => {
             prix: state.prix,
             qtestock: state.qtestock,
             image: files[0].file.name,
-            categorie: state.categorie,
+            categorie: state.categorie
            // clients: clt.length > 0 ? clt : state.clients
         };
         dispatch(updatemontre(mont));
-        navigate("/");
+        navigate("/montres");
     }
     const handelInputChange = (e) => {
         const { name, value } = e.target;
@@ -99,13 +100,14 @@ const EditMontre = () => {
             <form style={{ marginLeft: 8 }}>
                 
                 <FormControl>
-                    <TextField name="matque"
+                    <TextField name="marque"
                         variant="outlined"
                         label="MARQUE"
                         value={state.marque}
                         onChange={handelInputChange}
                         required
                         style={{ margin: 10 }} />
+
                     <TextField name="couleur"
                         variant="outlined"
                         label="Couleur"
