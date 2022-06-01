@@ -4,6 +4,7 @@ create app mern full stack using node.js express and MongoDB with mongoose (back
 Authentification :
 ![image](https://user-images.githubusercontent.com/73079423/171308174-02f7a17a-aa25-4620-bff8-3105c840641b.png)
 
+Admin Part :
 
 ![image](https://user-images.githubusercontent.com/73079423/171307590-d41627ac-3409-4b72-8997-b5d4432546af.png)
 
@@ -27,7 +28,7 @@ Update :
 
 ![image](https://user-images.githubusercontent.com/73079423/171308076-da394b7b-4b05-4afa-abb8-7195b390a449.png)
 
-Command Part :
+Customer Part :
 
 ![image](https://user-images.githubusercontent.com/73079423/171312544-63a55462-494d-4a9f-8684-1e56c0fa42a5.png)
 
