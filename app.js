@@ -32,9 +32,9 @@ app.use('/api/categories', categorieRouter);
 app.use('/api/montres', montreRouter); 
 app.use('/api/users', userRouter);
 
-app.use('/api/users', acheteurRouter);
+//app.use('/api/usersc', acheteurRouter);
 app.use('/api/commandes', commandeRouter);
-app.use('/api/commandes', lignecommandeRouter);
+app.use('/api/lignescommandes', lignecommandeRouter);
 
 app.get("/",(req,res)=>{
     res.send("Montre");
