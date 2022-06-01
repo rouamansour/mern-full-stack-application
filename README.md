@@ -27,4 +27,8 @@ Update :
 
 ![image](https://user-images.githubusercontent.com/73079423/171308076-da394b7b-4b05-4afa-abb8-7195b390a449.png)
 
+Command Part :
+
+![image](https://user-images.githubusercontent.com/73079423/171312544-63a55462-494d-4a9f-8684-1e56c0fa42a5.png)
+
 
