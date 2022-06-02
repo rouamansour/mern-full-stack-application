@@ -1,6 +1,10 @@
 # mern-full-stack-application
 create app mern full stack using node.js express and MongoDB with mongoose (backend) and React js redux (frontEnd) 
 
+Digram class :
+![image](https://user-images.githubusercontent.com/73079423/171521146-46b94a43-55bc-4d90-adbc-5fcc244ca6f8.png)
+
+
 Authentification :
 ![image](https://user-images.githubusercontent.com/73079423/171308174-02f7a17a-aa25-4620-bff8-3105c840641b.png)
 
